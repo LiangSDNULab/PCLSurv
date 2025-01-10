@@ -210,7 +210,7 @@ def train(train_loader, model, criterion, optimizer, epoch, CancerName, seed):
             acc_proto.update(accp[0], RNASeq[0].size(0))
 
         # average loss across all sets of prototypes
-        loss_proto = loss_proto / 8  # len(num_cluster)
+        loss_proto = loss_proto / len(num_cluster)
         
         loss = loss_cox + loss_info + loss_proto + loss_re1 + loss_re2
         # print('loss_proto:', loss_proto.item())
